@@ -1,0 +1,58 @@
+.App {
+  display: flex;
+}
+
+.chat-please {
+  margin: auto;
+}
+
+.please {
+  width: 270px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #f7f8f9;
+  text-align: center;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f7f8f9;
+  padding-top: 20px;
+}
+
+.contact {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  padding: 20px 0 0 30px;
+  cursor: pointer;
+}
+
+.contact:hover, .active {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 #d7dfda;
+}
+
+.inputBlock {
+  position: relative;
+}
+
+.material-icons {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  opacity: .5;
+}
+
+.inputSearch {
+  width: 170px;
+  height: 30px;
+  margin: 0 0 20px 22px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 #d7dfda;
+  cursor: pointer;
+  padding-left: 30px;
+}
