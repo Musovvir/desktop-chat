@@ -1,23 +1,28 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {loadChat} from "../../redux/actions/chat";
+import { loadChat } from "../../redux/actions/chat";
 
-
-function Contact(props) {
+function Contact({ contact: { _id, fullname } }) {
   const opened = useSelector((state) => state.chat.opened);
-  const myId = useSelector((state) => state.chat.myId);
+  const myId = useSelector((state) => state.profile.myId);
   const dispatch = useDispatch();
 
-  const handleClick = (contactId) => {
-    dispatch(loadChat(myId, contactId));
+  const isAlreadyOpenedContact = () => {
+    return _id === opened;
+  };
+
+  const handleClick = () => {
+    if (!isAlreadyOpenedContact()) {
+      dispatch(loadChat(myId, _id));
+    }
   };
   return (
     <div>
       <div
-        className={`contact ${opened === props.contact._id ? "active" : ""}`}
-        onClick={() => handleClick(myId, props.contact._id)}
+        className={`contact ${opened === _id ? "active" : ""}`}
+        onClick={() => handleClick(myId, _id)}
       >
-        {props.contact.fullname}
+        {fullname}
       </div>
     </div>
   );

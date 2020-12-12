@@ -1,10 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Contact from "./Contact";
 import SearchContact from "./SearchContact";
+import { loadContacts } from "../../redux/actions/contacts";
 
 function Sidebar() {
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector((state) => state.contacts.contacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadContacts());
+  }, [dispatch]);
 
   return (
     <div className="sidebar">

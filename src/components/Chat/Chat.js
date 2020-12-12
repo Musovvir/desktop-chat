@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ItemChat from "../Item-chat";
+import ItemChat from "../Item-chat/ItemChat";
+import HeaderChat from "./HeaderChat/HeaderChat";
+import SendMessage from "./SendMessage/SendMessage";
 
 function Chat() {
   const loading = useSelector((state) => state.chat.loading);
@@ -15,12 +17,16 @@ function Chat() {
     );
   }
   return (
-    <div className="chat-please">
-      {loading
-        ? "Идёт загрузка"
-        : chats.map((chat) => {
-            return <ItemChat key={chat._id} chat={chat} />;
-          })}
+    <div className="chat">
+      <HeaderChat />
+      <div className="chat-please">
+        {loading
+          ? "Идёт загрузка"
+          : chats.map((chat) => {
+              return <ItemChat key={chat._id} chat={chat} />;
+            })}
+      </div>
+      <SendMessage />
     </div>
   );
 }

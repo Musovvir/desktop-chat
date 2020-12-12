@@ -1,13 +1,15 @@
-export function f() {
-    return (dispatch) => {
-        dispatch({type: "load_application_start"});
+// открытие/закрытие профиля
 
-        fetch()
-            .then(response => response.json())
-            .then(json => {
-                dispatch({
-                    type: "load_application_success"
-                })
-            })
-    }
+export function profileToggle() {
+  return (dispatch) => {
+    dispatch({ type: "load_application_success" });
+  };
+}
+
+// Поиск контакта
+
+export function loadSearchContact(inputValue) {
+  return (dispatch) => {
+    dispatch({ type: "load_search_contact", payload: inputValue });
+  };
 }

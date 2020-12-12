@@ -1,22 +1,24 @@
 const initialState = {
-    loading: true,
-}
+  openProfile: false,
+  searchValue: "",
+  searchContactValue: ""
+};
 
 export default function application(state = initialState, action) {
-    switch (action.type) {
-        case "load_application_start":
-            return {
-                ...state,
-                loading: true
-            }
+  switch (action.type) {
+    case "load_application_success":
+      return {
+        ...state,
+        openProfile: !state.openProfile,
+      };
 
-        case "load_application_success":
-            return {
-                ...state,
-                loading: false
-            }
+    case "load_search_contact":
+      return {
+        ...state,
+        searchContactValue: action.payload
+      }
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }
