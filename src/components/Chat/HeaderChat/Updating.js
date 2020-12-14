@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Updating(props) {
+function Updating() {
     return (
         <div className='updating'>
             Updating...
-            <i className="material-icons">autorenew</i>
+            <i className="material-icons autorenew">autorenew</i>
         </div>
     );
 }

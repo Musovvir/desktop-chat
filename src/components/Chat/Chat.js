@@ -8,6 +8,7 @@ function Chat() {
   const loading = useSelector((state) => state.chat.loading);
   const opened = useSelector((state) => state.chat.opened);
   const chats = useSelector((state) => state.chat.chats);
+  const contacts = useSelector(state => state.contacts.contacts);
 
   if (opened === null) {
     return (
@@ -20,10 +21,9 @@ function Chat() {
     <div className="chat">
       <HeaderChat />
       <div className="chat-please">
-        {loading
-          ? "Идёт загрузка"
-          : chats.map((chat) => {
-              return <ItemChat key={chat._id} chat={chat} />;
+        {!loading &&
+           chats.map((chat, index) => {
+              return <ItemChat key={index} contacts={contacts.fullname} chat={chat} />;
             })}
       </div>
       <SendMessage />

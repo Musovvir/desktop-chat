@@ -1,11 +1,9 @@
 import React from 'react';
-import {useSelector} from "react-redux";
 
-function ProfileHeader(props) {
-    const fullname = useSelector(state => state.contacts.contacts.fullname);
+function ProfileHeader({name}) {
     return (
         <div className='fullname-contact'>
-            {fullname}
+            {name}
         </div>
     );
 }

@@ -12,7 +12,7 @@
 }
 
 .sidebar {
-  width: 350px;
+  width: 300px;
   height: 100vh;
   background-color: #f7f8f9;
   padding-top: 70px;
@@ -26,7 +26,7 @@
 }
 
 .input {
-  width: 273px;
+  width: 300px;
   height: 80px;
   background-color: #f7f8f9;
   position: fixed;
@@ -34,12 +34,18 @@
 }
 
 .contact {
-  width: 200px;
+  width: 260px;
   height: 50px;
+  display: flex;
   margin: auto;
-  padding: 20px 0 0 30px;
+  padding: 20px 0 10px 10px;
   cursor: pointer;
   background-color: #f7f8f9;
+  font-weight: 600;
+}
+
+.contact .date {
+  margin: 5px 30px 0 auto;
 }
 
 .contact:hover,
@@ -47,6 +53,12 @@
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 #d7dfda;
+}
+
+.date {
+  font-size: 0.65em;
+  font-weight: 600;
+  text-align: right;
 }
 
 .inputBlock {
@@ -94,13 +106,11 @@
 /*styles for chat*/
 
 .chat {
-  flex: 100%;
-  width: 100%;
+  flex: 3;
   position: relative;
 }
 
 .chat-please {
-  width: 100%;
   height: 100vh;
   overflow-y: scroll;
   display: flex;
@@ -191,6 +201,11 @@
   display: flex;
 }
 
+.autorenew {
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
 .search-message .material-icons {
   color: #a4b5cc;
   padding: 0 0 10px 10px;
@@ -207,21 +222,49 @@
 
 .fullname-contact {
   margin: auto;
+  font-weight: 600;
+}
+
+.updating {
+  margin: auto;
 }
 
 /*avatar*/
 
 .avatar-profile {
-  width: 80px;
-  height: 80px;
   margin: auto;
   background: linear-gradient(0deg, #74a4e8, #b0e7f8);
   border-radius: 50%;
   color: white;
-  font-size: 1.5em;
   text-align: center;
+  font-weight: 500;
+}
+
+.small {
+  min-width: 30px;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 30px 10px 0 0;
+}
+
+.medium {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  line-height: 40px;
+  margin: 0 9px 0 10px;
+}
+
+.large {
+  font-size: 30px;
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
   line-height: 80px;
-  font-weight: 600;
+  margin: 50px auto 20px auto;
 }
 
 /*profile*/
@@ -264,7 +307,8 @@
   padding: 15px 0 0 20px;
 }
 
-.name-profile, .username {
+.name-profile,
+.username {
   text-align: center;
   margin: 10px 0 0 0;
 }
@@ -296,5 +340,24 @@
 
 .open-profile::-webkit-scrollbar {
   width: 0;
-  height: 0;
+}
+
+/*анимации*/
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,19 +1,20 @@
 import React from "react";
 
-function Social({socials}) {
+function Social({ socials }) {
   return (
     <div className="profile-social">
       <div>Social</div>
-      <div className="profile-icons">
-        <div className='social-icons'>
-          <i className="fab fa-instagram" />
-        </div>
-        <div className='social-icons'>
-          <i className="fab fa-twitter" />
-        </div>
-        <div className='social-icons'>
-          <i className="fab fa-facebook-f" />
-        </div>
+      <div className="social-block">
+        {/*{socials.map((social) => {*/}
+        {/*  return (*/}
+        {/*    <div className="profile-icons">*/}
+        {/*      <div className="social-icons">*/}
+        {/*        <i className={`fab fa-${social}`} />*/}
+        {/*        {social[social]}*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  );*/}
+        {/*})}*/}
       </div>
     </div>
   );
