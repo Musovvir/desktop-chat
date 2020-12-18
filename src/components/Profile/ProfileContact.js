@@ -28,7 +28,7 @@ function ProfileContact() {
       <div className="username">@{profile?.username}</div>
       <Communication />
       <Social socials={profile?.socials} />
-      <Media />
+      <Media fileName="Desktop-chat.pdf"/>
     </div>
   );
 }

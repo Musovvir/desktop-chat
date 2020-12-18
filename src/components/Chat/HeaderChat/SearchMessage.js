@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-function SearchMessage(props) {
+function SearchMessage() {
+  const [message, setMessage] = useState("");
+  const handleChange = (e) => {
+    setMessage(e.target.value);
+  };
   return (
-    <div className='search-message'>
+    <div className="search-message">
+      <input onChange={handleChange} value={message} />
       <div className="material-icons">search</div>
     </div>
   );

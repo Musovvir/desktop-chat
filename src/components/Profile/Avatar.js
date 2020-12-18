@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-function Avatar({ fullname, size }) {
+function Avatar({ fullname, size, online }) {
   const switchClass = classNames(
     "avatar",
     { small: size === "small" },
@@ -10,6 +10,7 @@ function Avatar({ fullname, size }) {
   );
   return (
     <div className={switchClass}>
+      {online && <div className="online" />}
       <div className="avatar-profile">{fullname}</div>
     </div>
   );

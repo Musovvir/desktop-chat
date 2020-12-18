@@ -9,7 +9,6 @@ export function profileToggle() {
 // Поиск контакта
 
 export function loadSearchContact(inputValue) {
-  return (dispatch) => {
-    dispatch({ type: "load_search_contact", payload: inputValue });
-  };
+  return { type: "search_contact", payload: inputValue };
 }
+

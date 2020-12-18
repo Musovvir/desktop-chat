@@ -1,8 +1,14 @@
-import React from 'react';
+import React from "react";
 
-function Media(props) {
+function Media({ fileName }) {
     return (
-        <div></div>
+        <div className="mediaFile">
+            <div className="media">Media</div>
+            <div className="file">
+                <div className="fileName-image"></div>
+                <div className="fileName">{fileName}</div>
+            </div>
+        </div>
     );
 }
 

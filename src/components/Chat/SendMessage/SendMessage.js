@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import ButtonScrip from "./ButtonScrip";
 import ButtonMicrophone from "./ButtonMicrophone";
+import {TextareaAutosize} from "@material-ui/core";
 
-function SendMessage(props) {
+function SendMessage() {
+    const [content, setContent] = useState("");
+
+    const handleChange = (e) => {
+        setContent(e.target.value)
+    };
   return (
-    <div className="send-form">
-      <input type="text" placeholder="Write a message" />
+    <div className="form">
+        <TextareaAutosize
+            onChange={handleChange}
+            value={content}
+            className="send-form"
+            placeholder="Write a message..."
+            maxRows="5"
+        />
       <ButtonScrip />
       <ButtonMicrophone />
     </div>

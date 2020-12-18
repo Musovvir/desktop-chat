@@ -20,17 +20,13 @@
   position: relative;
 }
 
-.sidebar::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
 .input {
   width: 300px;
   height: 80px;
   background-color: #f7f8f9;
   position: fixed;
   top: 0;
+  z-index: 99;
 }
 
 .contact {
@@ -55,10 +51,18 @@
   box-shadow: 0 0 5px 0 #d7dfda;
 }
 
+.block-contact {
+}
+
 .date {
   font-size: 0.65em;
   font-weight: 600;
   text-align: right;
+  opacity: .4;
+}
+
+.message-item {
+  opacity: .4;
 }
 
 .inputBlock {
@@ -76,7 +80,7 @@
 }
 
 .inputSearch {
-  width: 170px;
+  width: 220px;
   height: 30px;
   margin: 20px 20px 20px 20px;
   outline: none;
@@ -111,16 +115,15 @@
 }
 
 .chat-please {
-  height: 100vh;
+  height: 95vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   margin: auto;
 }
 
-.chat-please::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .inbox-message {
@@ -163,8 +166,22 @@
 }
 
 .send-form {
+  line-height: 17px;
+  border: none;
+  outline: none;
+  width: 91%;
+  padding: 0 15px;
+  align-self: center;
+  overflow-wrap: break-word;
+  resize: none;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.form {
   border-top: 1px solid lightgrey;
   display: flex;
+  bottom: 0;
 }
 
 .send-form input {
@@ -206,11 +223,23 @@
   animation: spin 1.5s linear infinite;
 }
 
+.search-message {
+  position: relative;
+}
+
 .search-message .material-icons {
   color: #a4b5cc;
   padding: 0 0 10px 10px;
   margin: auto;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search-message input {
+  outline: none;
+  border: none;
 }
 
 .settings-profile .material-icons {
@@ -220,9 +249,16 @@
   cursor: pointer;
 }
 
-.fullname-contact {
+.block-name {
   margin: auto;
   font-weight: 600;
+  display: flex;
+  position: relative;
+}
+
+.block-name .online {
+  right: -15px;
+  top: 4px;
 }
 
 .updating {
@@ -238,6 +274,20 @@
   color: white;
   text-align: center;
   font-weight: 500;
+}
+
+.avatar {
+  position: relative;
+}
+
+.online {
+  border: 1px solid white;
+  right: 0;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #12dd12;
+  border-radius: 50%;
 }
 
 .small {
@@ -292,7 +342,7 @@
   margin-left: 25px;
 }
 
-.profile-icons {
+.social-block{
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
   background-color: white;
@@ -304,7 +354,12 @@
 }
 
 .social-icons {
-  padding: 15px 0 0 20px;
+  padding: 15px 0 0 10px;
+  opacity: .4;
+}
+
+.social-icons i {
+  padding-right: 10px;
 }
 
 .name-profile,
@@ -338,8 +393,29 @@
   padding: 30px 25px 0 25px;
 }
 
-.open-profile::-webkit-scrollbar {
-  width: 0;
+.media {
+  margin: 40px 0 0 0;
+}
+
+.file {
+  width: 240px;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 10px;
+  border-radius: 5px;
+}
+
+.fileName-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: linear-gradient(0deg, #74a4e8, #b0e7f8);
+}
+
+.fileName {
+  margin: 10px 0 0 10px;
 }
 
 /*анимации*/

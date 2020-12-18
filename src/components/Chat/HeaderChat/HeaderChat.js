@@ -20,7 +20,7 @@ function HeaderChat() {
   return (
     <div className="header-chat">
       <SearchMessage />
-        {loading ? <Updating /> : <ProfileHeader name={profile?.fullname}/>}
+        {loading ? <Updating /> : <ProfileHeader online={profile?.online} name={profile?.fullname}/>}
       <SettingsProfile />
     </div>
   );

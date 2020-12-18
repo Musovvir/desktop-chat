@@ -12,10 +12,10 @@ export default function application(state = initialState, action) {
         openProfile: !state.openProfile,
       };
 
-    case "load_search_contact":
+    case "search_contact":
       return {
         ...state,
-        searchContactValue: action.payload
+        searchContactValue: action.payload,
       }
 
     default:

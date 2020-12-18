@@ -5,16 +5,14 @@ function Social({ socials }) {
     <div className="profile-social">
       <div>Social</div>
       <div className="social-block">
-        {/*{socials.map((social) => {*/}
-        {/*  return (*/}
-        {/*    <div className="profile-icons">*/}
-        {/*      <div className="social-icons">*/}
-        {/*        <i className={`fab fa-${social}`} />*/}
-        {/*        {social[social]}*/}
-        {/*      </div>*/}
-        {/*    </div>*/}
-        {/*  );*/}
-        {/*})}*/}
+        {socials && Object.keys(socials).map((icon) => {
+          return (
+            <div className="social-icons">
+              <i className={`fab fa-${icon}`} />
+              {socials[icon]}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
 import React from 'react';
 
-function ProfileHeader({name}) {
+function ProfileHeader({name, online}) {
     return (
-        <div className='fullname-contact'>
-            {name}
+        <div className="block-name">
+            <div className='fullname-contact'>
+                {name}
+            </div>
+            {online && <div className="online" />}
         </div>
     );
 }
