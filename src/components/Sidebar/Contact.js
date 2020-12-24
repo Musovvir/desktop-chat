@@ -33,7 +33,7 @@ function Contact({ contact: { _id, fullname, online, lastMessage } }) {
         <div className="message-item">
           {_id === lastMessage?.toUserId && (
             <div>
-              {lastMessage.content.length > 3
+              {lastMessage.content?.length > 13
                 ? lastMessage.content.substring(0, 16) + "..."
                 : lastMessage.content}
             </div>

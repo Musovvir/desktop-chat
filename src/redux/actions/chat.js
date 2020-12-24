@@ -12,3 +12,33 @@ export function loadChat(myId, contactId) {
       });
   };
 }
+
+// Добавление сообщения
+
+export function sendMessage(contactId, myId, content) {
+  return (dispatch) => {
+    dispatch({ type: "send_message_start" });
+    fetch("https://api.intocode.ru:8001/api/messages", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        myId,
+        contactId,
+        content,
+        type: "text",
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: "send_message_success",
+          payload: {
+            ...json,
+          },
+        });
+      });
+  };
+}

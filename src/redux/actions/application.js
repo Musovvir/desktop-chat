@@ -11,4 +11,3 @@ export function profileToggle() {
 export function loadSearchContact(inputValue) {
   return { type: "search_contact", payload: inputValue };
 }
-
