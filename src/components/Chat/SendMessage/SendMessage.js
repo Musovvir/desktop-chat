@@ -18,7 +18,7 @@ function SendMessage() {
   };
 
   const sentMessage = () => {
-    dispatch(sendMessage(myId, opened, content));
+    dispatch(sendMessage(opened, myId, content));
   };
   return (
     <div className="form">
