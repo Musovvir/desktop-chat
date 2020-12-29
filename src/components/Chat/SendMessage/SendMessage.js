@@ -3,8 +3,8 @@ import ButtonScrip from "./ButtonScrip";
 import ButtonMicrophoneSend from "./ButtonMicrophoneSend";
 import { TextareaAutosize } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import {useParams} from "react-router-dom";
-import {sendMessage} from "../../../redux/actions/chat";
+import { useParams } from "react-router-dom";
+import { sendMessage } from "../../../redux/actions/chat";
 
 function SendMessage() {
   const dispatch = useDispatch();
@@ -30,7 +30,10 @@ function SendMessage() {
         maxRows="5"
       />
       <ButtonScrip />
-      <ButtonMicrophoneSend sentMessage={sentMessage} message={content?.length > 0} />
+      <ButtonMicrophoneSend
+        sentMessage={sentMessage}
+        message={content?.length > 0}
+      />
     </div>
   );
 }

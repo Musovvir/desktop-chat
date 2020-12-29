@@ -5,6 +5,7 @@ import Communication from "./Communication";
 import Social from "./Social";
 import Media from "./Media";
 import { useParams } from "react-router-dom";
+import {CSSTransition, SwitchTransition} from "react-transition-group";
 
 function ProfileContact() {
   const opened = useParams().id;
@@ -22,14 +23,18 @@ function ProfileContact() {
   }
 
   return (
-    <div className={openProfile ? "open-profile" : "closed-profile"}>
-      <Avatar size={"large"} fullname={profile?.fullname[0]} />
-      <div className="name-profile">{profile?.fullname}</div>
-      <div className="username">@{profile?.username}</div>
-      <Communication />
-      <Social socials={profile?.socials} />
-      <Media fileName="Desktop-chat.pdf"/>
-    </div>
+    <SwitchTransition>
+        <CSSTransition timeout={100}>
+            <div className={openProfile ? "open-profile" : "closed-profile"}>
+                <Avatar size={"large"} fullname={profile?.fullname[0]} />
+                <div className="name-profile">{profile?.fullname}</div>
+                <div className="username">@{profile?.username}</div>
+                <Communication />
+                <Social socials={profile?.socials} />
+                <Media fileName="Desktop-chat.pdf"/>
+            </div>
+        </CSSTransition>
+    </SwitchTransition>
   );
 }
 

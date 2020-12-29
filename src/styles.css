@@ -1,3 +1,7 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
 .App {
   display: flex;
 }
@@ -273,6 +277,12 @@
 
 .updating {
   margin: auto;
+  display: flex;
+}
+
+.up {
+  font-size: 1.1em;
+  margin-right: 5px;
 }
 
 .send {

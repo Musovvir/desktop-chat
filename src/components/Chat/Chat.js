@@ -23,7 +23,7 @@ function Chat() {
       <div className="chat-please">
         {!loading &&
            chats.map((chat, index) => {
-              return <ItemChat key={index} contacts={contacts.fullname} chat={chat} />;
+              return <ItemChat key={index} chat={chat} />;
             })}
       </div>
       <SendMessage />
