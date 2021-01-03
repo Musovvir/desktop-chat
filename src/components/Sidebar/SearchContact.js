@@ -13,6 +13,10 @@ function SearchContact() {
     dispatch(loadSearchContact(e.target.value));
   };
 
+  const clearSearch = () => {
+    dispatch(loadSearchContact(""));
+  };
+
   return (
     <div className="input">
       <div className="inputBlock">
@@ -24,6 +28,11 @@ function SearchContact() {
           onChange={handleChange}
         />
         <i className="material-icons">search</i>
+        {searchContact.length !== 0 && (
+            <i onClick={clearSearch} className="material-icons clearIcon">
+              clear
+            </i>
+        )}
       </div>
     </div>
   );

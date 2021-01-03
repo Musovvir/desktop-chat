@@ -1,9 +1,11 @@
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .App {
   display: flex;
+  overflow-y: hidden;
+  height: 97.1vh;
 }
 
 .please {
@@ -46,6 +48,7 @@ body {
 
 .contact .date {
   margin: 5px 30px 0 auto;
+  opacity: .5;
 }
 
 .contact:hover,
@@ -57,6 +60,7 @@ body {
 
 .message-item {
   opacity: 0.4;
+  font-size: .9em;
 }
 
 .inputBlock {
@@ -83,6 +87,14 @@ body {
   box-shadow: 0 0 5px 0 #d7dfda;
   cursor: pointer;
   padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  opacity: .6;
+}
+
+.clearIcon {
+  margin-left: 210px;
+  cursor: pointer;
 }
 
 .clear {
@@ -109,7 +121,7 @@ body {
 }
 
 .chat-please {
-  height: 95vh;
+  height: 84vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -127,6 +139,8 @@ body {
   background-color: #f7f8f9;
   border-radius: 15px 15px 15px 0;
   padding: 15px 15px 5px 15px;
+  font-size: .95em;
+  font-weight: 600;
 }
 .inbox {
   margin: 10px 10px;
@@ -143,11 +157,16 @@ body {
   margin: 10px 10px;
   border-radius: 15px 15px 0 15px;
   padding: 15px 15px 0 15px;
+  font-size: .95em;
 }
 
 .outbox {
   align-self: flex-end;
   max-width: 70%;
+}
+
+.content {
+  font-family: 'Roboto', sans-serif;
 }
 
 .infobox {
@@ -175,10 +194,9 @@ body {
 .form {
   border-top: 1px solid lightgrey;
   display: flex;
-  bottom: 0;
 }
 
-.send-form input {
+.send-form {
   width: 90%;
   outline: none;
   border: none;
@@ -204,6 +222,37 @@ body {
   opacity: 0.5;
 }
 
+.sendIcon {
+  border-top: 1px solid lightgray;
+  display: flex;
+  bottom: 0;
+  margin: 0 15px 0 15px;
+  line-height: 17px;
+  outline: none;
+  width: 95%;
+  padding: 0 15px;
+  align-self: center;
+  overflow-wrap: break-word;
+  resize: none;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.sendIcon-enter {
+  transform: scale(0);
+}
+.sendIcon-enter-active {
+  transform: scale(1);
+  transition:  100ms;
+}
+.sendIcon-exit {
+  transform: scale(1);
+}
+.sendIcon-exit-active {
+  transform: scale(0);
+  transition:  100ms;
+}
+
 .check-message .check {
   font-size: .7em;
 }
@@ -219,7 +268,6 @@ body {
   font-size: 0.65em;
   font-weight: 600;
   text-align: right;
-  opacity: 0.4;
 }
 
 /*header-chat*/
@@ -235,23 +283,53 @@ body {
   animation: spin 1.5s linear infinite;
 }
 
-.search-message {
-  position: relative;
+.search-message-open {
+  align-items: center;
+  transition: 0.5s;
+  border: 1px solid #e3e3e3;
+  display: flex;
 }
 
-.search-message .material-icons {
-  color: #a4b5cc;
-  padding: 5px 5px;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.search-message input {
-  outline: none;
+.search-message-open input,
+.search-message-close input {
   border: none;
+  outline: none;
+}
+
+.search-message-close {
+  align-items: center;
+  transition: 0.5s;
+  overflow: hidden;
+  display: flex;
+  width: 30px;
+}
+
+.search-message-open {
+  align-items: center;
+  transition: 0.5s;
+  border: 1px solid #e3e3e3;
+  display: flex;
+}
+
+.search-message-open i,
+.search-message-close i {
+  font-size: 20px;
+  color: gray;
+}
+.search-message-open input,
+.search-message-close input {
+  border: none;
+  outline: none;
+}
+
+.search-message {
+  display: flex;
+  flex: 0.35;
+  padding-left: 10px;
+}
+
+.header-name {
+  margin: 5px auto 0 0;
 }
 
 .settings-profile .material-icons {
@@ -263,11 +341,16 @@ body {
   border-radius: 50%;
 }
 
+.icon {
+  padding: 2px 5px;
+  display: flex;
+}
+
 .block-name {
-  margin: auto;
-  font-weight: 600;
   display: flex;
   position: relative;
+  font-weight: 600;
+  margin-left: 200px;
 }
 
 .block-name .online {
@@ -278,11 +361,14 @@ body {
 .updating {
   margin: auto;
   display: flex;
+  width: 300px;
+  align-content: center;
 }
 
 .up {
   font-size: 1.1em;
   margin-right: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .send {
@@ -391,12 +477,6 @@ body {
 
 /*profile*/
 
-.profile-contact {
-  width: 350px;
-  background-color: #f7f8f9;
-  padding: 30px 25px 0 25px;
-}
-
 .communication {
   margin: auto;
   padding-top: 10px;
@@ -411,7 +491,7 @@ body {
   color: #a4b5cc;
   font-size: 1.2em;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 .social-block {
@@ -448,23 +528,6 @@ body {
   margin: 0 0 10px 0;
 }
 
-.closed-profile {
-  transition: 600ms;
-  transform-origin: right;
-  width: 0;
-  transform: scaleX(0);
-  background-color: whitesmoke;
-}
-.open-profile {
-  transition: 600ms;
-  transform-origin: right;
-  transform: scaleX(1);
-  overflow-y: scroll;
-  background-color: whitesmoke;
-  width: 20%;
-  padding: 30px 25px 0 25px;
-}
-
 .media {
   margin: 40px 0 0 0;
 }
@@ -490,7 +553,6 @@ body {
   margin: 10px 0 0 10px;
 }
 
-/*анимации*/
 
 @-webkit-keyframes spin {
   0% {

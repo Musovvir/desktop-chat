@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { profileToggle } from "../../../redux/actions/application";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 function SettingsProfile() {
   const dispatch = useDispatch();
@@ -11,7 +11,6 @@ function SettingsProfile() {
   };
 
   return (
-    <SwitchTransition>
       <CSSTransition timeout={100}>
         <div className="settings-profile">
           <div className="material-icons click" onClick={handleClick}>
@@ -19,7 +18,6 @@ function SettingsProfile() {
           </div>
         </div>
       </CSSTransition>
-    </SwitchTransition>
   );
 }
 

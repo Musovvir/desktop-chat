@@ -1,3 +1,6 @@
+import { scrollChatDown } from "../../utils/domChat";
+
+
 export function loadChat(myId, contactId) {
   return (dispatch) => {
     dispatch({ type: "load_chat_start", payload: contactId });
@@ -9,6 +12,7 @@ export function loadChat(myId, contactId) {
           type: "load_chat_success",
           payload: json,
         });
+        scrollChatDown();
       });
   };
 }
@@ -36,6 +40,7 @@ export function sendMessage(contactId, myId, content) {
         dispatch({
           type: "send_message_success",
         });
+        scrollChatDown();
       });
   };
 }

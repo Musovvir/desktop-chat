@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function Inbox({ chat }) {
   const opened = useParams().id;
 
-  const { fullname } = useSelector((state) =>
+  const {fullname}  = useSelector((state) =>
     state.contacts.contacts.find((contact) => {
       return opened === contact._id;
     })
@@ -16,7 +16,7 @@ function Inbox({ chat }) {
     <div className="inbox">
       <Avatar size={"small"} fullname={fullname[0]} />
       <div className="inbox-message">
-        {chat.content}
+        <div className="content">{chat.content}</div>
         <div className="date">
           <div>{dayjs(chat.time).format("hh:mm")}</div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Communication(props) {
+function Communication() {
   return (
     <div className="communication">
         <div className="communication-item">

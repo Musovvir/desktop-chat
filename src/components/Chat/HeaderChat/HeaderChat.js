@@ -19,8 +19,16 @@ function HeaderChat() {
 
   return (
     <div className="header-chat">
-      <SearchMessage />
-        {loading ? <Updating /> : <ProfileHeader online={profile?.online} name={profile?.fullname}/>}
+      <div className="search-message">
+        <SearchMessage />
+      </div>
+      {loading ? (
+        <Updating />
+      ) : (
+        <div className="header-name">
+          <ProfileHeader online={profile?.online} name={profile?.fullname} />
+        </div>
+      )}
       <SettingsProfile />
     </div>
   );
