@@ -6,6 +6,7 @@ function ItemChat({ chat }) {
   if (chat.type === "text") {
     return <TextMessage chat={chat} />;
   }
+
   return <Infobox content={chat.content} />;
 }
 

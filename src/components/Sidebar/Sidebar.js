@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Contact from "./Contact";
 import SearchContact from "./SearchContact";
 import { loadContacts } from "../../redux/actions/contacts";
-import Skeleton from "react-loading-skeleton";
 import ContactSkeleton from "./ContactSkeleton";
 
 function Sidebar() {
   const loading = useSelector((state) => state.contacts.loading);
+
   const contacts = useSelector((state) => {
     const searchContactValue = state.application.searchContactValue;
 

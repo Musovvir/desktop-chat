@@ -11,13 +11,13 @@ function SettingsProfile() {
   };
 
   return (
-      <CSSTransition timeout={100}>
-        <div className="settings-profile">
-          <div className="material-icons click" onClick={handleClick}>
-            settings
-          </div>
+    <CSSTransition timeout={100}>
+      <div className="settings-profile">
+        <div className="material-icons click" onClick={handleClick}>
+          settings
         </div>
-      </CSSTransition>
+      </div>
+    </CSSTransition>
   );
 }
 

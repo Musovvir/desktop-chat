@@ -29,9 +29,9 @@ function SearchContact() {
         />
         <i className="material-icons">search</i>
         {searchContact.length !== 0 && (
-            <i onClick={clearSearch} className="material-icons clearIcon">
-              clear
-            </i>
+          <i onClick={clearSearch} className="material-icons clearIcon">
+            clear
+          </i>
         )}
       </div>
     </div>

@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function Inbox({ chat }) {
   const opened = useParams().id;
 
-  const {fullname}  = useSelector((state) =>
+  const { fullname } = useSelector((state) =>
     state.contacts.contacts.find((contact) => {
       return opened === contact._id;
     })

@@ -1,6 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
-import CheckMessage from "../../Chat/HeaderChat/CheckMessage";
+import Check from "./Check";
 
 function Outbox({ chat }) {
   return (
@@ -9,7 +9,7 @@ function Outbox({ chat }) {
         <div className="content">{chat.content}</div>
         <div className="date-check">
           <div className="date">{dayjs(chat.time).format("hh:mm")}</div>
-          <CheckMessage read={chat.read} />
+          <Check read={chat.read} />
         </div>
       </div>
     </div>

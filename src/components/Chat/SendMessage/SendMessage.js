@@ -5,10 +5,13 @@ import { TextareaAutosize } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { sendMessage } from "../../../redux/actions/chat";
+import { useHotkeys } from "react-hotkeys-hook";
 
 function SendMessage() {
   const dispatch = useDispatch();
+
   const myId = useSelector((state) => state.profile.myId);
+
   const opened = useParams().id;
 
   const [content, setContent] = useState("");
@@ -20,6 +23,25 @@ function SendMessage() {
   const sentMessage = () => {
     dispatch(sendMessage(opened, myId, content));
   };
+
+  /**
+   * Перенос строки при клике на shift+enter
+   */
+  useHotkeys(
+    "shift+enter",
+    (event) => {
+      event.preventDefault();
+      setContent((content) => content + "\n");
+    });
+
+  useHotkeys(
+    "enter",
+    (e) => {
+      e.preventDefault();
+      sentMessage();
+    },
+    [content]
+  );
   return (
     <div className="form">
       <TextareaAutosize

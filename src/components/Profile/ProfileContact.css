@@ -1,23 +1,27 @@
 .profile-contact {
-    width: 250px;
-    background-color: #f7f8f9;
-    padding: 30px 25px 0 25px;
-    overflow: hidden;
-    transition: width 1s;
+  width: 250px;
+  background-color: #f7f8f9;
+  padding: 30px 25px 0 25px;
+  overflow-y: scroll;
+  transition: width 1s;
 }
 
 .profile-block {
-    width: 250px;
+  width: 250px;
 }
 
 .exit {
-    width: 0;
+  width: 0;
 }
 
 .enter {
-    width: 0;
+  width: 0;
 }
 
 .enter-active {
-    width: 250px;
+  width: 250px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }

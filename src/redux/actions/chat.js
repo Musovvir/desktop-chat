@@ -1,6 +1,5 @@
 import { scrollChatDown } from "../../utils/domChat";
 
-
 export function loadChat(myId, contactId) {
   return (dispatch) => {
     dispatch({ type: "load_chat_start", payload: contactId });
@@ -21,7 +20,10 @@ export function loadChat(myId, contactId) {
 
 export function sendMessage(contactId, myId, content) {
   return (dispatch) => {
-    dispatch({ type: "send_message_start", payload: {contactId, myId, content, type: "text"} });
+    dispatch({
+      type: "send_message_start",
+      payload: { contactId, myId, content, type: "text" },
+    });
     fetch("https://api.intocode.ru:8001/api/messages", {
       method: "POST",
       headers: {

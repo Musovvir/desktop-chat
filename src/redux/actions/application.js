@@ -1,9 +1,7 @@
-// открытие/закрытие профиля
+// открытие и закрытие профиля
 
 export function profileToggle() {
-  return (dispatch) => {
-    dispatch({ type: "load_application_success" });
-  };
+  return { type: "load_application_success" };
 }
 
 // Поиск контакта
@@ -14,7 +12,6 @@ export function loadSearchContact(inputValue) {
 
 /**
  * Открытие и закрытие поисковика сообщений
- * @returns {{type: string}}
  */
 export function searchOpened() {
   return { type: "search_show_hide_toggle" };

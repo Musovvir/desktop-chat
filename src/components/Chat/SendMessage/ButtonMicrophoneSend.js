@@ -1,13 +1,16 @@
 import React from "react";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 function ButtonMicrophoneSend({ message, sentMessage }) {
   return (
     <button className="send click">
-        <div classNames="sendIcon">
+      <SwitchTransition>
+        <CSSTransition key={message} timeout={100} classNames="sendIcon">
           <i className="material-icons microphone" onClick={sentMessage}>
             {message ? "send" : "mic"}
           </i>
-        </div>
+        </CSSTransition>
+      </SwitchTransition>
     </button>
   );
 }

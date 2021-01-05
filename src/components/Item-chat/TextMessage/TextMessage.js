@@ -7,10 +7,12 @@ function TextMessage({ chat }) {
   const myId = useSelector((state) => state.profile.myId);
 
   const isOutgoing = myId === chat.toUserId;
-  if (!isOutgoing) {
-    return <Outbox chat={chat} />;
+
+  if (isOutgoing) {
+    return <Inbox chat={chat} />;
   }
-  return <Inbox chat={chat} />;
+
+  return <Outbox chat={chat} />;
 }
 
 export default TextMessage;

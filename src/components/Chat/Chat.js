@@ -1,17 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ItemChat from "../Item-chat/ItemChat";
 import HeaderChat from "./HeaderChat/HeaderChat";
 import SendMessage from "./SendMessage/SendMessage";
 import { loadChat } from "../../redux/actions/chat";
 import { useParams } from "react-router-dom";
+import Messages from "./Messages";
 
 function Chat() {
   const loading = useSelector((state) => state.chat.loading);
-  const chats = useSelector((state) => state.chat.chats);
+
   const dispatch = useDispatch();
+
   const opened = useParams().id;
+
   const myId = useSelector((state) => state.profile.myId);
+
+  const chats = useSelector((state) => {
+    const searchValue = state.application.searchValue;
+
+    return state.chat.chats.filter((item) => {
+      return (
+        item.content.toUpperCase().indexOf(searchValue.toUpperCase()) !== -1
+      );
+    });
+  });
 
   useEffect(() => {
     if (opened) {
@@ -29,12 +41,7 @@ function Chat() {
   return (
     <div className="chat">
       <HeaderChat />
-      <div className="chat-please" id="chat-window">
-        {!loading &&
-          chats.map((chat, index) => {
-            return <ItemChat key={index} chat={chat} />;
-          })}
-      </div>
+      <Messages chats={chats} loading={loading} />
       <SendMessage />
     </div>
   );

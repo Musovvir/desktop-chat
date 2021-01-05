@@ -1,6 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {searchMessages, searchOpened} from "../../../redux/actions/application";
+import {
+  searchMessages,
+  searchOpened,
+} from "../../../redux/actions/application";
 
 function SearchMessage() {
   const dispatch = useDispatch();
@@ -21,19 +24,20 @@ function SearchMessage() {
 
   const searchOpen = useSelector((state) => state.application.searchOpen);
 
-
   return (
-      <div className={searchOpen ? "search-message-open" : "search-message-close"}>
-          <div className="icon click" onClick={searchOpenToggle}>
-              <i className="material-icons">search</i>
-          </div>
-          <input value={searchValue} onChange={handleChange} />
-          {searchValue.length !== 0 && (
-              <i onClick={clearSearch} className="material-icons click">
-                  clear
-              </i>
-          )}
+    <div
+      className={searchOpen ? "search-message-open" : "search-message-close"}
+    >
+      <div className="icon click" onClick={searchOpenToggle}>
+        <i className="material-icons">search</i>
       </div>
+      <input value={searchValue} onChange={handleChange} />
+      {searchValue.length !== 0 && (
+        <i onClick={clearSearch} className="material-icons click">
+          clear
+        </i>
+      )}
+    </div>
   );
 }
 
