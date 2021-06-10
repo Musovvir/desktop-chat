@@ -1,6 +1,3 @@
-![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/desktop-chat.jpg)
-![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/chat.jpg)
-![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/profile.jpg)
 # Десктопный чат
 
 ### Что я использовал:
@@ -31,3 +28,8 @@
 - удаление контактов
 - поиск по имени
 - и т.д.
+
+Скриншоты приложения:
+![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/desktop-chat.jpg)
+![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/chat.jpg)
+![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/profile.jpg)
