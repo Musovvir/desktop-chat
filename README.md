@@ -1,6 +1,4 @@
-Вид самого приложения
 ![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/desktop-chat.jpg)
-Чат
 ![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/chat.jpg)
 ![Header](https://github.com/musovvir/desktop-chat/blob/master/src/assets/profile.jpg)
 # Десктопный чат
